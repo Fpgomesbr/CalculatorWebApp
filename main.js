@@ -1,3 +1,25 @@
+// Get the toggle switch element
+var toggleSwitch = document.getElementById("toggleSwitch");
+
+// Get calculator buttons
+var calculatorButtons = document.querySelectorAll(".btn input[type='button']");
+
+// Disable calculator by default
+toggleSwitch.checked = false;
+toggleCalculator(false);
+
+// Function to toggle calculator functionality
+function toggleCalculator(enabled) {
+  calculatorButtons.forEach(function (button) {
+    button.disabled = !enabled;
+  });
+}
+
+// Event listener for the toggle switch
+toggleSwitch.addEventListener("change", function () {
+  toggleCalculator(this.checked);
+});
+
 function Solve(val) {
     var v = document.getElementById('res');
     v.value += val;
